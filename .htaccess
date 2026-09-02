@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Sirve archivos estáticos sin mostrar /public en la URL
+    RewriteCond %{REQUEST_URI} !^/public/ [NC]
+    RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|svg|webp|pdf)$ [NC]
+    RewriteRule ^(.*)$ public/$1 [L]
+
+    # Front controller para rutas limpias
+    RewriteRule ^$ public/index.php [L]
+    RewriteRule ^(.+)$ public/index.php?url=$1 [QSA,L]
+</IfModule>

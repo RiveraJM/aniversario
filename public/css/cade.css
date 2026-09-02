@@ -1,0 +1,417 @@
+/* ========================================
+   REGISTRO CADE EDUCATIVO - ESTILOS
+   ======================================== */
+
+:root {
+    --primary: #003366;
+    --primary-dark: #002244;
+    --secondary: #F8A900;
+    --secondary-light: #FFC940;
+    --background: #F3F2F3;
+    --text-primary: #172033;
+    --text-secondary: #3A4A5F;
+    --text-light: #6B7A8F;
+    --white: #FFFFFF;
+    --success: #22C55E;
+    --danger: #EF4444;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.registro-page {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.82) 0%, rgba(0, 26, 51, 0.7) 45%, rgba(0, 51, 102, 0.82) 100%), url('../img/campus.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.header .logo-img,
+.footer .logo-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+   ======================================== */
+.cade-container {
+    max-width: 860px;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem 2rem;
+}
+
+/* ========================================
+   TARJETA DEL FORMULARIO
+   ======================================== */
+.cade-card {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+}
+
+/* ========================================
+   HEADER DEL FORMULARIO
+   ======================================== */
+.cade-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.cade-header .icono-actividad {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 51, 102, 0.3);
+}
+
+.cade-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+}
+
+.cade-header .subtitulo {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.cade-header .actividad-nombre {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--text-primary);
+    padding: 0.4rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: 0.8rem;
+    box-shadow: 0 2px 12px rgba(248, 169, 0, 0.3);
+}
+
+.cade-header .cupos-disponibles {
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.cade-header .cupos-disponibles strong {
+    color: var(--primary);
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   SECCIÓN DEL FORMULARIO
+   ======================================== */
+.seccion-formulario {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--background);
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--primary);
+}
+
+.seccion-formulario .seccion-titulo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.seccion-formulario .seccion-titulo i {
+    color: var(--secondary);
+}
+
+.seccion-formulario .seccion-descripcion {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 1.2rem;
+}
+
+/* ========================================
+   CAMPOS DEL FORMULARIO
+   ======================================== */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.form-group label .required {
+    color: var(--danger);
+    font-weight: 700;
+}
+
+.form-group .help-text {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 0.2rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #E5E7EB;
+    border-radius: var(--radius-sm);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--white);
+    color: var(--text-primary);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(0, 51, 102, 0.1);
+}
+
+.form-control.error {
+    border-color: var(--danger);
+}
+
+.form-control.error:focus {
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+
+.form-control::placeholder {
+    color: #9CA3AF;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+}
+
+/* ========================================
+   SELECT (Cargo)
+   ======================================== */
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B7A8F' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+select.form-control:focus {
+    border-color: var(--primary);
+}
+
+/* ========================================
+   MENSAJES DE ERROR
+   ======================================== */
+.error-message {
+    color: var(--danger);
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.error-message i {
+    font-size: 0.8rem;
+}
+
+.alert-danger {
+    background: #FEE2E2;
+    border: 1px solid #FECACA;
+    color: #991B1B;
+    padding: 1rem 1.2rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.alert-danger i {
+    font-size: 1.2rem;
+    margin-top: 2px;
+}
+
+.alert-danger ul {
+    margin-top: 0.3rem;
+    padding-left: 1.2rem;
+}
+
+/* ========================================
+   CHECKBOX
+   ======================================== */
+.form-group-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+    padding: 1rem 1.2rem;
+    background: var(--background);
+    border-radius: var(--radius-sm);
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.form-group-checkbox.error {
+    border-color: var(--danger);
+}
+
+.form-group-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--primary);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.form-group-checkbox label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+.form-group-checkbox label a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-group-checkbox label a:hover {
+    color: var(--secondary);
+}
+
+/* ========================================
+   BOTÓN DE ENVÍO
+   ======================================== */
+.btn-submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 20px rgba(0, 51, 102, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 40px rgba(0, 51, 102, 0.4);
+}
+
+.btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-submit i {
+    font-size: 1.2rem;
+}
+
+/* ========================================
+   TEXTO INFORMATIVO
+   ======================================== */
+.texto-informativo {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.texto-informativo i {
+    color: var(--secondary);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 768px) {
+    .cade-container {
+        padding: 0 1rem;
+        margin: 1rem auto;
+    }
+
+    .cade-card {
+        padding: 1.5rem;
+    }
+
+    .cade-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .seccion-formulario {
+        padding: 1rem;
+    }
+
+    .cade-header .icono-actividad {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cade-card {
+        padding: 1rem;
+    }
+
+    .cade-header h1 {
+        font-size: 1.2rem;
+    }
+
+    .btn-submit {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .form-control {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+    }
+}
