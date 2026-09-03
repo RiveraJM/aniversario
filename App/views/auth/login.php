@@ -69,7 +69,7 @@
             height: 70px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+           
         }
 
         .login-logo h1 {
@@ -84,7 +84,7 @@
         }
 
         .login-logo p {
-            color: #6B7A8F;
+            color: #024;
             font-size: 0.9rem;
             margin-top: 0.2rem;
         }
@@ -117,7 +117,7 @@
         .form-control {
             width: 100%;
             padding: 0.8rem 1rem 0.8rem 2.8rem;
-            border: 2px solid #E5E7EB;
+            border: 2px solid #020f29;
             border-radius: 10px;
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
@@ -210,10 +210,10 @@
 <body>
     <div class="login-container">
         <div class="login-logo">
-            <img src="<?php echo $publicUrl ?? BASE_URL; ?>img/logo1.png" alt="Universidad Peruana Unión">
-            <h1>Aniversario <span class="highlight">2026</span></h1>
-            <p>Ingresa con tus credenciales</p>
-        </div>
+    <img src="<?php echo $publicUrl ?? BASE_URL; ?>img/logo1.png" alt="Universidad Peruana Unión" style="filter: brightness(0) saturate(100%) invert(9%) sepia(54%) saturate(3000%) hue-rotate(190deg) brightness(95%) contrast(105%);">
+    <h1>Aniversario <span class="highlight">2026</span></h1>
+    <p>Ingresa con tus credenciales</p>
+</div>
 
         <?php if (isset($error)): ?>
             <div class="error-message">

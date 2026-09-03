@@ -716,6 +716,24 @@ body {
     pointer-events: none;
     z-index: 0;
 }
+/* ========================================
+   BOTÓN DE DESCARGA DEL BOLETÍN
+   ======================================== */
+.btn-download {
+    display: inline-block;
+    background-color: #F8A900;
+    color: #002244;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: #003366;
+}
 
 /* CADE utiliza su imagen específica; las demás usan campus.webp como respaldo. */
 .actividad-card-id-1 {
@@ -725,13 +743,13 @@ body {
 }
 
 .actividad-card-id-2 {
-    --activity-image: url('../img/sesion.jpg');
+    --activity-image: url('../img/sesion.png');
     --activity-gradient-start: rgba(2, 8, 41, 0.68);
     --activity-gradient-end: rgba(45, 157, 190, 0.68);
 }
 
 .actividad-card-id-3 {
-    --activity-image: url('../img/desfile.jpg');
+    --activity-image: url('../img/desfile.png');
     --activity-gradient-start: rgba(2, 8, 41, 0.68);
     --activity-gradient-end: rgba(45, 157, 190, 0.68);
 }

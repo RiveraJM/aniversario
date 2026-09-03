@@ -60,7 +60,7 @@ $actividades = [
         'categoria' => 'Académico',
         'descripcion' => 'Congreso de Alto Nivel que reúne a líderes educativos, directivos y docentes para discutir las tendencias pedagógicas del futuro, metodologías innovadoras y el impacto de la tecnología en la educación superior.',
         'fecha' => '13 de Octubre de 2026',
-        'hora' => '09:00 AM',
+        'hora' => '8:00 AM',
         'icono' => 'fa-chalkboard-user',
         'lugar' => 'Auditorio Central - Campus Universitario',
         'descripcion_larga' => 'El CADE Educativo es un espacio de reflexión y análisis sobre el futuro de la educación. Contaremos con ponentes nacionales e internacionales que compartirán sus experiencias en gestión educativa, innovación pedagógica y transformación digital. Dirigido a directivos, docentes y estudiantes de últimos ciclos.'
@@ -234,7 +234,12 @@ $actividades = Auth::filtrarActividades($actividades);
                     Nuestras Actividades
                 </h2>
                 <p>Descubre todos los eventos que hemos preparado para ti</p>
+                <a href="<?php echo $publicUrl ?? BASE_URL; ?>pdf/boletin.pdf" download class="btn-download">
+        Descargar Boletín
+        <i class="fas fa-download"></i>
+    </a>
             </div>
+            
 
            <!-- Grid de Actividades -->
 <?php $basesPorActividad = require __DIR__ . '/../config/bases.php'; ?>
