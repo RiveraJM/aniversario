@@ -2,37 +2,37 @@
 class Auth {
     private static $usuarios = [
         [
-            'usuario' => 'aniversario',
+            'usuario' => 'upeu',
             'password' => 'tpp2020',
             'tipo' => 'Colegios Adventistas',
             'actividades' => [1, 2, 3, 4, 5, 6] // Todas
         ],
         [
-            'usuario' => 'aniversario',
+            'usuario' => 'upeu',
             'password' => 'tpp2021',
             'tipo' => 'Colegios No Adventistas',
             'actividades' => [1, 2, 3] // CADE, Sesión Solemne, Desfile
         ],
         [
-            'usuario' => 'aniversario',
+            'usuario' => 'upeu',
             'password' => 'tpp2022',
             'tipo' => 'Universidades No Adventistas',
             'actividades' => [1, 2, 3] // CADE, Sesión Solemne, Desfile
         ],
         [
-            'usuario' => 'aniversario',
+            'usuario' => 'upeu',
             'password' => 'tpp2023',
             'tipo' => 'Instituciones Adventistas',
             'actividades' => [1, 2, 3, 4, 5, 6] // Todas
         ],
         [
-            'usuario' => 'aniversario',
+            'usuario' => 'upeu',
             'password' => 'tpp2024',
             'tipo' => 'Instituciones No Adventistas',
             'actividades' => [2, 3] // Sesión Solemne, Desfile
         ],
         [
-            'usuario' => 'aniversario',
+            'usuario' => 'upeu',
             'password' => 'tpp2025',
             'tipo' => 'Iglesias',
             'actividades' => [5, 6] // Concurso Alzaré mi Voz, Deporte InterIglesias
