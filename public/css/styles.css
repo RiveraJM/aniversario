@@ -55,7 +55,6 @@ body {
         transform: translateY(0);
     }
 }
-
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -130,7 +129,7 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     border-bottom: 2px solid rgba(248, 169, 0, 0.3);
 }
-
+/*TAMAÑO DE HEADER */
 .header-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -142,21 +141,60 @@ body {
     position: relative;
 }
 
+/* El logo institucional queda a la izquierda, independiente del texto centrado. */
+.header-university-logo {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: auto;
+    height: 90px;
+    object-fit: contain;
+    transform: translateY(-50%);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.header-home-link {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 90px;
+    transform: translateY(-50%);
+}
+
+.header-home-link .header-university-logo {
+    position: static;
+    display: block;
+    transform: none;
+}
+
+.header-university-logo:hover {
+    transform: translateY(-50%) scale(1.05);
+}
+
+.header-home-link:hover .header-university-logo {
+    transform: scale(1.05);
+}
+/*TAMAÑO DE LA LETRA 21 ANIVERSARIO*/
 .header-logo {
     display: flex;
     align-items: center;
     gap: 0.8rem;
     font-weight: 700;
-    font-size: 2.2rem;
+    font-size: 3.5rem;
     color: var(--white);
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    position: relative;
+    z-index: 1;
+}
+
+.header-title {
+    display: block;
+    text-align: center;
 }
 
 .logo-img {
-    height: 55px;
+    height: 90px; /*TAMAÑO DE LOGO UPEU*/
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
@@ -182,14 +220,14 @@ body {
 .header-nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2rem;/*DISTANCIA DE LOS BOTONES DE LA IZQUIERDA*/
 }
 
 .header-nav a {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: -4rem;
     transition: var(--transition);
     padding: 0.4rem 0;
     border-bottom: 2px solid transparent;
@@ -258,18 +296,26 @@ body {
     }
 
     .header-logo {
-        position: static;
-        transform: none;
         font-size: 1.6rem;
         width: 100%;
         justify-content: center;
         gap: 0.8rem;
-        left: auto;
-        top: auto;
     }
 
-    .header-logo .logo-img {
-        height: 45px;
+    .header-university-logo {
+        position: static;
+        transform: none;
+        height: 80px;
+    }
+
+    .header-home-link {
+        position: static;
+        height: auto;
+        transform: none;
+    }
+
+    .header-university-logo:hover {
+        transform: scale(1.05);
     }
 
     .header-nav {
@@ -300,8 +346,8 @@ body {
         gap: 0.5rem;
     }
 
-    .header-logo .logo-img {
-        height: 38px;
+    .header-university-logo {
+        height: 50px;
     }
 
     .header-nav ul {
@@ -633,7 +679,14 @@ body {
    TARJETA DE ACTIVIDAD - GLASSMORPHISM
    ======================================== */
 .actividad-card {
-    background: rgba(255, 255, 255, 0.8);
+    /* Imagen de respaldo para cualquier actividad que no tenga una imagen propia. */
+    --activity-image: url('../img/campus.webp');
+    --activity-gradient-start: rgba(2, 8, 41, 0.68);
+    --activity-gradient-end: rgba(138, 152, 221, 0.68);
+    background-image: linear-gradient(to top, var(--activity-gradient-start), var(--activity-gradient-end)), var(--activity-image);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     backdrop-filter: blur(10px);
     border-radius: var(--radius);
     padding: 1.8rem;
@@ -647,6 +700,7 @@ body {
     opacity: 0;
     transform: translateY(40px);
     animation: fadeInUp 0.8s ease forwards;
+    overflow: hidden;
 }
 
 .actividad-card::before {
@@ -657,8 +711,52 @@ body {
     right: 0;
     bottom: 0;
     border-radius: var(--radius);
-    background: linear-gradient(135deg, rgba(0, 51, 102, 0.02) 0%, rgba(248, 169, 0, 0.02) 100%);
+    /* Overlay claro: conserva visible la fotografía y mejora la lectura del contenido. */
+    background: rgba(1, 4, 20, 0.2);
     pointer-events: none;
+    z-index: 0;
+}
+
+/* CADE utiliza su imagen específica; las demás usan campus.webp como respaldo. */
+.actividad-card-id-1 {
+    --activity-image: url('../img/cade.png');
+    --activity-gradient-start: rgba(2, 8, 41, 0.68);
+    --activity-gradient-end: rgba(45, 157, 190, 0.68);
+}
+
+.actividad-card-id-2 {
+    --activity-image: url('../img/sesion.jpg');
+    --activity-gradient-start: rgba(2, 8, 41, 0.68);
+    --activity-gradient-end: rgba(45, 157, 190, 0.68);
+}
+
+.actividad-card-id-3 {
+    --activity-image: url('../img/desfile.jpg');
+    --activity-gradient-start: rgba(2, 8, 41, 0.68);
+    --activity-gradient-end: rgba(45, 157, 190, 0.68);
+}
+
+.actividad-card-id-4 {
+    --activity-image: url('../img/inter.png');
+    --activity-gradient-start: rgba(2, 8, 41, 0.68);
+    --activity-gradient-end: rgba(45, 157, 190, 0.68);
+}
+
+.actividad-card-id-5 {
+    --activity-image: url('../img/canto.png');
+    --activity-gradient-start: rgba(2, 8, 41, 0.68);
+    --activity-gradient-end: rgba(45, 157, 190, 0.68);
+}
+
+.actividad-card-id-6 {
+    --activity-image: url('../img/iglesia.png');
+    --activity-gradient-start: rgba(2, 8, 41, 0.68);
+    --activity-gradient-end: rgba(45, 157, 190, 0.68);
+}
+
+.actividad-card > * {
+    position: relative;
+    z-index: 1;
 }
 
 .actividad-card:hover {
@@ -668,58 +766,59 @@ body {
 }
 
 .actividad-card:hover .card-icon {
-    transform: rotate(5deg) scale(1.1);
+    transform: scale(1.04);
 }
 
-/* Badge número */
+/* Badge superior con el número de cada actividad. */
 .card-badge {
     position: absolute;
-    top: -10px;
-    right: -10px;
-    background: var(--gradient-primary);
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 999px;
+    background: rgba(0, 25, 55, 0.72);
     color: var(--white);
-    padding: 0.3rem 1rem;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    box-shadow: 0 4px 20px rgba(0, 51, 102, 0.4);
-    letter-spacing: 0.5px;
-    border: 2px solid var(--secondary);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(8px);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
 }
 
 .card-badge .numero {
     display: flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.25rem;
 }
 
-/* Icono */
+.card-badge i {
+    color: var(--secondary);
+    font-size: 0.7rem;
+}
+
+/* Icono superior destacado de la tarjeta. */
 .card-icon {
-    width: 70px;
-    height: 70px;
-    background: var(--gradient-primary);
-    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    color: var(--white);
+    width: 56px;
+    height: 56px;
+    margin-top: 0.2rem;
     margin-bottom: 0.2rem;
-    box-shadow: 0 8px 24px rgba(0, 51, 102, 0.3);
-    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 12px;
+    background: rgba(0, 51, 102, 0.88);
+    color: var(--white);
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.22);
+    font-size: 1.45rem;
     position: relative;
     overflow: hidden;
+    transition: var(--transition);
 }
 
-.card-icon::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(248, 169, 0, 0.2) 0%, transparent 60%);
-    border-radius: 50%;
+.card-icon i {
 }
 
 /* Contenido */
@@ -740,7 +839,7 @@ body {
 .card-header h3 {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: var(--white);
     line-height: 1.3;
     transition: var(--transition);
 }
@@ -765,7 +864,7 @@ body {
 }
 
 .descripcion {
-    color: var(--text-secondary);
+    color: #ffff;
     font-size: 0.92rem;
     line-height: 1.6;
     margin: 0.2rem 0 0.4rem;
@@ -792,12 +891,12 @@ body {
     align-items: center;
     gap: 0.5rem;
     font-size: 0.85rem;
-    color: var(--text-secondary);
+    color: #ffff;
     transition: var(--transition);
 }
 
 .detail-item i {
-    color: var(--primary);
+    color: var(--secondary);
     font-size: 0.9rem;
     width: 16px;
     text-align: center;
@@ -1209,3 +1308,4 @@ body {
         padding: 1.2rem;
     }
 }
+

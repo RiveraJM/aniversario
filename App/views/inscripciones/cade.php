@@ -34,9 +34,11 @@ if (!$actividad) {
     ============================================ -->
     <header class="header">
         <div class="header-container">
+            <a href="<?php echo BASE_URL; ?>" class="header-home-link" aria-label="Ir al inicio">
+                <img src="<?php echo BASE_URL; ?>img/logo1.png" alt="Logo Universidad Peruana Unión" class="header-university-logo">
+            </a>
             <div class="header-logo">
-                <img src="<?php echo BASE_URL; ?>img/logo1.png" alt="Logo Universidad" class="logo-img">
-                <span>Aniversario <span class="highlight">2026</span></span>
+                <span class="header-title">Aniversario <span class="highlight">2026</span></span>
             </div>
             <nav class="header-nav">
                 <ul>
@@ -63,9 +65,7 @@ if (!$actividad) {
                 <div class="actividad-nombre">
                     <i class="fas fa-tag"></i> <?php echo htmlspecialchars($actividad['nombre']); ?>
                 </div>
-                <div class="cupos-disponibles">
-                    <i class="fas fa-users"></i> Cupos disponibles: <strong><?php echo $disponibles; ?></strong>
-                </div>
+                
             </div>
 
             <!-- Mostrar errores generales -->
@@ -174,7 +174,7 @@ if (!$actividad) {
                 SECCIÓN 2: DATOS DE CONTACTO
                 ============================================ -->
                 <div class="seccion-formulario" style="border-left-color: var(--secondary);">
-                    <div class="seccion-titulo" style="color: var(--secondary);">
+                    <div class="seccion-titulo" style="color: #002244;">
                         <i class="fas fa-envelope"></i> Datos de Contacto
                     </div>
                     <p class="seccion-descripcion">Información para contacto y notificaciones.</p>

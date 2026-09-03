@@ -93,7 +93,7 @@ body.registro-page {
 }
 
 .cade-header .subtitulo {
-    color: var(--text-secondary);
+    color: #002244;
     font-size: 1rem;
 }
 
@@ -112,7 +112,7 @@ body.registro-page {
 .cade-header .cupos-disponibles {
     margin-top: 0.8rem;
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: #002244;
 }
 
 .cade-header .cupos-disponibles strong {
@@ -142,12 +142,12 @@ body.registro-page {
 }
 
 .seccion-formulario .seccion-titulo i {
-    color: var(--secondary);
+    color: #002244;
 }
 
 .seccion-formulario .seccion-descripcion {
     font-size: 0.85rem;
-    color: var(--text-light);
+    color: #002244;
     margin-bottom: 1.2rem;
 }
 
@@ -180,7 +180,7 @@ body.registro-page {
 .form-control {
     width: 100%;
     padding: 0.8rem 1rem;
-    border: 2px solid #E5E7EB;
+    border: 2px solid var(--primary);
     border-radius: var(--radius-sm);
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
@@ -192,7 +192,7 @@ body.registro-page {
 .form-control:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(0, 51, 102, 0.1);
+    box-shadow: none;
 }
 
 .form-control.error {
@@ -297,7 +297,7 @@ select.form-control:focus {
 
 .form-group-checkbox label {
     font-size: 0.9rem;
-    color: var(--text-secondary);
+    color: #002244;
     cursor: pointer;
     line-height: 1.5;
 }
@@ -309,7 +309,7 @@ select.form-control:focus {
 }
 
 .form-group-checkbox label a:hover {
-    color: var(--secondary);
+    color: #002244;
 }
 
 /* ========================================
@@ -356,11 +356,11 @@ select.form-control:focus {
     text-align: center;
     margin-top: 1rem;
     font-size: 0.85rem;
-    color: var(--text-light);
+    color: #002244;
 }
 
 .texto-informativo i {
-    color: var(--secondary);
+    color: #002244;
 }
 
 /* ========================================
@@ -413,5 +413,89 @@ select.form-control:focus {
     .form-control {
         font-size: 0.9rem;
         padding: 0.6rem 0.8rem;
+    }
+}
+
+/* ========================================
+   HEADER CADE: LOGO A LA IZQUIERDA Y TITULO CENTRADO
+   ======================================== */
+.registro-page .header .header-container {
+    position: relative;
+    min-height: 90px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 0;
+}
+
+.registro-page .header .header-home-link {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    height: 90px;
+    transform: translateY(-50%);
+}
+
+.registro-page .header .header-university-logo {
+    display: block;
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+}
+
+.registro-page .header .header-logo {
+    position: relative;
+    width: auto;
+    justify-content: center;
+    font-size: 3.5rem;
+}
+
+.registro-page .header .header-title {
+    display: block;
+    text-align: center;
+}
+
+.registro-page .header .header-nav {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 900px) {
+    .registro-page .header .header-container {
+        min-height: 0;
+        flex-direction: column;
+        padding: 0.5rem 0;
+    }
+
+    .registro-page .header .header-home-link {
+        position: static;
+        height: auto;
+        transform: none;
+    }
+
+    .registro-page .header .header-university-logo {
+        height: 80px;
+    }
+
+    .registro-page .header .header-logo {
+        width: 100%;
+        font-size: 1.6rem;
+    }
+
+    .registro-page .header .header-nav {
+        position: static;
+        width: 100%;
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .registro-page .header .header-university-logo {
+        height: 50px;
+    }
+
+    .registro-page .header .header-logo {
+        font-size: 1.3rem;
     }
 }

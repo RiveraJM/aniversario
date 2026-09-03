@@ -34,9 +34,11 @@ if (!$actividad) {
     ============================================ -->
     <header class="header">
         <div class="header-container">
+            <a href="<?php echo BASE_URL; ?>" class="header-home-link" aria-label="Ir al inicio">
+                <img src="<?php echo BASE_URL; ?>img/logo1.png" alt="Logo Universidad Peruana Unión" class="header-university-logo">
+            </a>
             <div class="header-logo">
-                <img src="<?php echo BASE_URL; ?>img/logo1.png" alt="Logo Universidad" class="logo-img">
-                <span>Aniversario <span class="highlight">2026</span></span>
+                <span class="header-title">21 <span class="highlight">ANIVERSARIO</span></span>
             </div>
             <nav class="header-nav">
                 <ul>

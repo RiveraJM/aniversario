@@ -502,7 +502,9 @@ $es_individual = isset($registro['nombres']); // Si tiene nombres, es registro i
     <header class="header">
         <div class="header-container">
             <div class="header-logo">
-                <img src="<?php echo BASE_URL; ?>img/logo1.png" alt="Logo Universidad" class="logo-img">
+                <a href="<?php echo BASE_URL; ?>" class="header-home-link" aria-label="Ir al inicio">
+                    <img src="<?php echo BASE_URL; ?>img/logo1.png" alt="Logo Universidad" class="header-university-logo">
+                </a>
                 <span>Aniversario <span class="highlight">2026</span></span>
             </div>
         </div>

@@ -20,7 +20,8 @@ ob_start();
     <?php $basesPorActividad = require dirname(__DIR__, 2) . '/config/bases.php'; ?>
     <div class="actividades-grid">
         <?php foreach($actividades as $actividad): ?>
-        <div class="actividad-card" data-aos="fade-up">
+        <!-- Cada tarjeta recibe una clase basada en su ID para asignarle su imagen de fondo. -->
+        <div class="actividad-card actividad-card-id-<?php echo (int) $actividad['id']; ?>" data-aos="fade-up">
             <!-- Badge de número -->
             <div class="card-badge">
                 <span class="numero">#<?php echo str_pad($actividad['numero'], 2, '0', STR_PAD_LEFT); ?></span>
@@ -68,6 +69,7 @@ ob_start();
                 </a>
                 <?php endif; ?>
             </div>
+
         </div>
         <?php endforeach; ?>
     </div>

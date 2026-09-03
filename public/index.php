@@ -156,9 +156,9 @@ $actividades = Auth::filtrarActividades($actividades);
     ============================================ -->
     <header class="header">
     <div class="header-container">
+        <img src="<?php echo BASE_URL; ?>img/logo1.png" alt="Logo Universidad" class="header-university-logo">
         <div class="header-logo">
-            <img src="<?php echo BASE_URL; ?>img/logo1.png" alt="Logo Universidad" class="logo-img">
-            <span>Aniversario <span class="highlight">2026</span></span>
+            <span class="header-title">21 <span class="highlight">ANIVERSARIO</span></span>
         </div>
         <nav class="header-nav">
             <ul>
@@ -234,7 +234,8 @@ $actividades = Auth::filtrarActividades($actividades);
 <?php $basesPorActividad = require __DIR__ . '/../config/bases.php'; ?>
 <div class="actividades-grid">
     <?php foreach($actividades as $actividad): ?>
-    <div class="actividad-card">
+    <!-- La clase por ID permite personalizar el fondo de cada actividad desde CSS. -->
+    <div class="actividad-card actividad-card-id-<?php echo (int) $actividad['id']; ?>">
         <!-- Badge de número -->
         <div class="card-badge">
             <span class="numero">
@@ -285,6 +286,7 @@ $actividades = Auth::filtrarActividades($actividades);
     </a>
     <?php endif; ?>
 </div>
+
     </div>
     <?php endforeach; ?>
 </div>
