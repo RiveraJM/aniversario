@@ -841,11 +841,11 @@ body {
     font-weight: 700;
     color: var(--white);
     line-height: 1.3;
-    transition: var(--transition);
+    
 }
 
 .actividad-card:hover .card-header h3 {
-    color: var(--primary);
+    color: var(--white);
 }
 
 .categoria {
@@ -901,6 +901,15 @@ body {
     width: 16px;
     text-align: center;
     transition: var(--transition);
+}
+
+/* La ubicación puede ser extensa, por eso ocupa una línea completa. */
+.detail-location {
+    flex-basis: 100%;
+}
+
+.detail-location span {
+    overflow-wrap: anywhere;
 }
 
 .actividad-card:hover .detail-item i {

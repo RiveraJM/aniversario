@@ -50,6 +50,10 @@ ob_start();
                         <i class="fas fa-clock"></i>
                         <span><?php echo $actividad['hora']; ?></span>
                     </div>
+                    <div class="detail-item detail-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span><?php echo htmlspecialchars($actividad['lugar']); ?></span>
+                    </div>
                 </div>
             </div>
 

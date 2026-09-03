@@ -38,6 +38,8 @@ if(isset($_GET['url']) && !empty($_GET['url'])) {
 }
 
 require_once __DIR__ . '/../core/Auth.php';
+require_once __DIR__ . '/../core/Controller.php';
+require_once __DIR__ . '/../App/Controllers/HomeCONTROLLER.PHP';
 if (session_status() !== PHP_SESSION_ACTIVE) {
     session_start();
 }
@@ -83,6 +85,7 @@ $actividades = [
         'descripcion' => 'Gran desfile cívico-cultural que recorrerá las principales calles de Tarapoto, con la participación de delegaciones estudiantiles, carros alegóricos, bandas musicales y comparsas que representan la riqueza cultural de la región San Martín.',
         'fecha' => '15 de Octubre de 2026',
         'hora' => '08:00 AM',
+        'ubicacion' => 'Plaza Mayor - Tarapoto',
         'icono' => 'fa-flag',
         'lugar' => 'Plaza Mayor - Tarapoto',
         'descripcion_larga' => 'El Desfile por la Plaza Tarapoto es una muestra de integración entre la universidad y la comunidad. Participan todas las facultades con delegaciones que representan la diversidad cultural de nuestra región. Un evento que promueve el orgullo por nuestras raíces y el compromiso social.'
@@ -125,6 +128,9 @@ $actividades = [
     ]
 ];
 
+// La fuente oficial permite editar el lugar una sola vez en HomeController.
+$homeController = new HomeController();
+$actividades = $homeController->obtenerActividades();
 $actividades = Auth::filtrarActividades($actividades);
 ?>
 
@@ -266,6 +272,10 @@ $actividades = Auth::filtrarActividades($actividades);
                 <div class="detail-item">
                     <i class="fas fa-clock"></i>
                     <span><?php echo htmlspecialchars($actividad['hora']); ?></span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span><?php echo htmlspecialchars($actividad['lugar']); ?></span>
                 </div>
             </div>
         </div>

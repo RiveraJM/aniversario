@@ -16,7 +16,7 @@ class HomeController extends Controller {
         }
 
         // Obtener todas las actividades y filtrarlas
-        $todasActividades = $this->getActividadesEjemplo();
+        $todasActividades = $this->obtenerActividades();
         $actividadesFiltradas = Auth::filtrarActividades($todasActividades);
         
         $data = [
@@ -28,7 +28,10 @@ class HomeController extends Controller {
         $this->view('home/index', $data);
     }
     
-    private function getActividadesEjemplo() {
+    /**
+     * Devuelve el catálogo central de actividades para todas las vistas.
+     */
+    public function obtenerActividades() {
         return [
             [
                 'id' => 1,
@@ -38,7 +41,7 @@ class HomeController extends Controller {
                 'descripcion' => 'Congreso de Alto Nivel que reúne a líderes educativos para discutir tendencias pedagógicas, metodologías innovadoras y el impacto de la tecnología en la educación superior.',
                 'fecha' => '13 de Octubre de 2026',
                 'hora' => '09:00 AM',
-                'lugar' => 'Auditorio Central - Campus Universitario',
+                'lugar' => 'Auditorio De la Fé',
                 'capacidad' => 300,
                 'inscritos' => 189,
                 'icono' => 'fa-chalkboard-user',
@@ -52,7 +55,7 @@ class HomeController extends Controller {
                 'descripcion' => 'Ceremonia protocolar de gran relevancia institucional donde se conmemora el aniversario, con autoridades académicas, políticas y el reconocimiento a docentes y estudiantes destacados.',
                 'fecha' => '14 de Octubre de 2026',
                 'hora' => '10:00 AM',
-                'lugar' => 'Templo Universitario - Campus Central',
+                'lugar' => 'Auditorio De la Fé',
                 'capacidad' => 500,
                 'inscritos' => 312,
                 'icono' => 'fa-certificate',
@@ -80,7 +83,7 @@ class HomeController extends Controller {
                 'descripcion' => 'Competencia deportiva que reúne a las principales instituciones educativas de la región en fútbol, básquet, vóley y atletismo, fomentando el espíritu deportivo y la sana competencia.',
                 'fecha' => '16 de Octubre de 2026',
                 'hora' => '08:00 AM',
-                'lugar' => 'Estadio Universitario - Complejo Deportivo',
+                'lugar' => 'Grass Sintético - Campus Universitario',
                 'capacidad' => 800,
                 'inscritos' => 523,
                 'icono' => 'fa-futbol',
@@ -94,7 +97,7 @@ class HomeController extends Controller {
                 'descripcion' => 'Concurso de talentos artísticos que busca descubrir estudiantes con habilidades sobresalientes en canto, danza, música instrumental y oratoria, como plataforma para expresar su creatividad.',
                 'fecha' => '17 de Octubre de 2026',
                 'hora' => '06:00 PM',
-                'lugar' => 'Teatro Universitario - Campus Central',
+                'lugar' => 'Auditorio De la Fé',
                 'capacidad' => 400,
                 'inscritos' => 267,
                 'icono' => 'fa-microphone',
@@ -108,7 +111,7 @@ class HomeController extends Controller {
                 'descripcion' => 'Encuentro deportivo que congrega a las diferentes congregaciones religiosas de la región en una jornada de confraternidad, competencia y valores, fortaleciendo lazos de hermandad y promoviendo la unidad.',
                 'fecha' => '18 de Octubre de 2026',
                 'hora' => '09:00 AM',
-                'lugar' => 'Complejo Deportivo Universitario',
+                'lugar' => 'Grass Sintético - Campus Universitario',
                 'capacidad' => 600,
                 'inscritos' => 398,
                 'icono' => 'fa-hand-holding-heart',
